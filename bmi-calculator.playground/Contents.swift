@@ -2,24 +2,27 @@
 
 import UIKit
 
-func calcBMI (yourWeight : Double, yourHeight : Double) -> Double {
+func calcBMI (yourWeight : Double, yourHeight : Double) -> String {
     
     let bmi = yourWeight / pow(yourHeight, 2)
     
+    let shortBMI = String(format: "%.2f", bmi)
+    
+    var interp = ""
+    
     if bmi > 25 {
-        print("Your BMI is: \(bmi). You are overweight...")
-
+        interp = "you are overweight."
     }
 
     else if bmi > 18.5 {
-        print("You are of normal weight")
+        interp = "you have a normal weight."
     }
 
     else {
-        print("You are underweight")
+        interp = "you are underweight"
     }
 
-     return bmi
+     return "Your BMI is \(shortBMI) and \(interp)"
     
 }
 
